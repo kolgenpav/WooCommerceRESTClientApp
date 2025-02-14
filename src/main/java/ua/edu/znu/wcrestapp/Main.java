@@ -20,7 +20,7 @@ public class Main {
         Gson gson = new Gson();
 
         //Get the product id
-        Long productId = 130L;
+        Long productId = 109L;
         try {
             WCProduct product = getProduct(productId, client, gson);
             System.out.println(product);
@@ -29,7 +29,7 @@ public class Main {
             OrderStatus orderStatus = OrderStatus.PROCESSING;
             ProductItem[] products = new ProductItem[1];
             ProductItem productItem = new ProductItem(productId, 1);
-            productItem.setSku("starmaster2");
+            productItem.setSku("109-10821388");
             products[0] = productItem;
             WCOrder order = prepeareWcOrder(products, orderStatus);
             System.out.println(gson.toJson(order));
