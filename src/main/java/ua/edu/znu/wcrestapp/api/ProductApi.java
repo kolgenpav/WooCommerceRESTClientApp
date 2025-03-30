@@ -4,12 +4,12 @@ import com.google.gson.Gson;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import ua.edu.znu.wcrestapp.entities.product.WCProduct;
+import ua.edu.znu.wcrestapp.model.Product;
 
 import java.io.IOException;
 import java.util.logging.Logger;
 
-public class ProductCall {
+public class ProductApi {
 
     /**
      * Get the product by id.
@@ -20,7 +20,7 @@ public class ProductCall {
      * @param config    the Config instance
      * @return the product instance
      */
-    public WCProduct getProduct(Long productId, OkHttpClient client, Gson gson, Config config) {
+    public Product getProduct(Long productId, OkHttpClient client, Gson gson, Config config) {
         String url = config.getBaseUrl() + "/products/" + productId;
         String resultJson = "";
         Request request = new Request.Builder()
@@ -37,6 +37,6 @@ public class ProductCall {
             Logger.getGlobal().severe(e.getMessage());
         }
         System.out.println(resultJson);
-        return gson.fromJson(resultJson, WCProduct.class);
+        return gson.fromJson(resultJson, Product.class);
     }
 }

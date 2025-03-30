@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.entities.product;
+package ua.edu.znu.wcrestapp.model;
 
 public enum ProductStatus {
     PUBLISH("publish"),

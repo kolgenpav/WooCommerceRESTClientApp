@@ -1,6 +1,6 @@
-package ua.edu.znu.wcrestapp.entities.product;
+package ua.edu.znu.wcrestapp.model;
 
-public record Category(Long id, String name, String slug) {
+public record ProductCategory(Long id, String name, String slug) {
 
     @Override
     public String toString() {

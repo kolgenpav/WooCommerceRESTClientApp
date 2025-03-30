@@ -1,9 +1,9 @@
-package ua.edu.znu.wcrestapp.entities.product;
+package ua.edu.znu.wcrestapp.model;
 
 import java.util.Arrays;
 
-public record Attribute(String id, String name, String slug, String position, boolean visible, String variation,
-                        boolean has_terms, String[] options) {
+public record ProductAttribute(String id, String name, String slug, String position, boolean visible, String variation,
+                               boolean has_terms, String[] options) {
 
     @Override
     public String toString() {

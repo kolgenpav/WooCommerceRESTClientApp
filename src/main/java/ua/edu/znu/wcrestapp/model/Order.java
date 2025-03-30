@@ -1,13 +1,11 @@
-package ua.edu.znu.wcrestapp.entities.order;
+package ua.edu.znu.wcrestapp.model;
 
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class WCOrder {
+public class Order {
     @Setter(AccessLevel.NONE)
     private Long id;
     @Setter(AccessLevel.NONE)

@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.entities;
+package ua.edu.znu.wcrestapp.model;
 
 public record Image(Long id, String src, String name, String alt) {
 

@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.entities.order;
+package ua.edu.znu.wcrestapp.model;
 
 public enum Currency {
     USD("USD"),

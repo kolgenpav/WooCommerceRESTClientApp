@@ -3,25 +3,25 @@ package ua.edu.znu.wcrestapp.api;
 import com.google.gson.Gson;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
-import ua.edu.znu.wcrestapp.entities.order.*;
+import ua.edu.znu.wcrestapp.model.*;
 
 import java.io.IOException;
 import java.util.logging.Logger;
 
-public class OrderCall {
+public class OrderApi {
     /**
-     * Get the WCOrder instance.
+     * Get the Order instance.
      *
      * @param products the products
-     * @return the WCOrder instance
+     * @return the Order instance
      */
     @NotNull
-    public WCOrder prepeareWcOrder(ProductItem[] products, OrderStatus orderStatus) {
+    public Order prepeareWcOrder(ProductItem[] products, OrderStatus orderStatus) {
         Shipping shipping = new Shipping("John", "Doe", "Company", "Address 1", "Address 2",
                 "City", "State", "Postcode", "Country");
         Billing billing = new Billing("John", "Doe", "Company", "Address 1", "Address 2",
                 "City", "State", "Postcode", "Country", "john@gail.com", "1234567890");
-        WCOrder order = new WCOrder();
+        Order order = new Order();
         order.setLine_items(products);
         order.setBilling(billing);
         order.setShipping(shipping);
@@ -41,9 +41,8 @@ public class OrderCall {
      * @param config the Config instance
      * @return the created order
      */
-    public WCOrder createOrder(WCOrder order, OkHttpClient client, Gson gson, Config config) {
+    public Order createOrder(Order order, OkHttpClient client, Gson gson, Config config) {
         String url = config.getBaseUrl() + "/orders";
-//        String credential = getCredential();
         String resultJson = "";
         RequestBody body = RequestBody.create(gson.toJson(order), MediaType.parse("application/json"));
         Request request = new Request.Builder()
@@ -61,6 +60,6 @@ public class OrderCall {
             Logger.getGlobal().severe(e.getMessage());
         }
         System.out.println(resultJson);
-        return gson.fromJson(resultJson, WCOrder.class);
+        return gson.fromJson(resultJson, Order.class);
     }
 }

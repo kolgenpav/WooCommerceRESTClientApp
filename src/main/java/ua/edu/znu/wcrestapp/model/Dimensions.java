@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.entities.product;
+package ua.edu.znu.wcrestapp.model;
 
 public record Dimensions(Double length, Double width, Double height) {
 
