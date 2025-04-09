@@ -1,6 +1,10 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.customer;
 
 import lombok.*;
+import ua.edu.znu.wcrestapp.model.Billing;
+import ua.edu.znu.wcrestapp.model.Shipping;
+
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -14,9 +18,9 @@ public class Customer {
     private String username;
     private String password;
     @Setter(AccessLevel.NONE)
-    private String date_created;
+    private LocalDateTime date_created;
     @Setter(AccessLevel.NONE)
-    private String date_modified;
+    private LocalDateTime date_modified;
     private Billing billing;
     private Shipping shipping;
 }

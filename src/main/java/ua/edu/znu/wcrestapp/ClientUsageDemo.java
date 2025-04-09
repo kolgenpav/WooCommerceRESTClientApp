@@ -6,7 +6,11 @@ import ua.edu.znu.wcrestapp.api.Config;
 import ua.edu.znu.wcrestapp.api.CustomerApi;
 import ua.edu.znu.wcrestapp.api.OrderApi;
 import ua.edu.znu.wcrestapp.api.ProductApi;
-import ua.edu.znu.wcrestapp.model.*;
+import ua.edu.znu.wcrestapp.model.customer.Customer;
+import ua.edu.znu.wcrestapp.model.order.Order;
+import ua.edu.znu.wcrestapp.model.order.OrderStatus;
+import ua.edu.znu.wcrestapp.model.order.ProductItem;
+import ua.edu.znu.wcrestapp.model.product.Product;
 
 import java.util.logging.Logger;
 
@@ -14,8 +18,8 @@ public class ClientUsageDemo {
 
     public static void main(String[] args) {
         OkHttpClient client = new OkHttpClient();
-        Gson gson = new Gson();
         Config config = new Config();
+        Gson gson = config.getGson();
 
         try {
             /*Product id*/
@@ -32,7 +36,7 @@ public class ClientUsageDemo {
             ProductItem productItem = new ProductItem(productId, 1);
             productItem.setSku("109-10821388");
             products[0] = productItem;
-            Order order = orderApi.prepeareWcOrder(products, orderStatus);
+            Order order = orderApi.prepeareOrder(products, orderStatus);
             System.out.println(gson.toJson(order));
             Order orderReturned = orderApi.createOrder(order, client, gson, config);
             System.out.println(orderReturned);

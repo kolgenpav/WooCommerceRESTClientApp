@@ -1,5 +1,8 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.product;
 
+import lombok.Getter;
+
+@Getter
 public enum ProductStatus {
     PUBLISH("publish"),
     DRAFT("draft"),
@@ -12,7 +15,4 @@ public enum ProductStatus {
         this.status = status;
     }
 
-    public String getStatus() {
-        return status;
-    }
 }

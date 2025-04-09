@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import ua.edu.znu.wcrestapp.model.Product;
+import ua.edu.znu.wcrestapp.model.product.Product;
 
 import java.io.IOException;
 import java.util.logging.Logger;

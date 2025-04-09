@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.product;
 
 public record ProductCategory(Long id, String name, String slug) {
 

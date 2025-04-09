@@ -1,5 +1,8 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.order;
 
+import lombok.Getter;
+
+@Getter
 public enum Currency {
     USD("USD"),
     EUR("EUR"),
@@ -9,9 +12,5 @@ public enum Currency {
 
     Currency(String currency) {
         this.currency = currency;
-    }
-
-    public String getCurrency() {
-        return currency;
     }
 }

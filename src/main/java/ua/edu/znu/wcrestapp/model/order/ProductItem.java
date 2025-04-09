@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,9 +13,9 @@ public class ProductItem {
     private Long productId;
     private Integer quantity;
     private String subtotal;
-    private String total;
+    private Double total;
     private String sku;
-    private String price;
+    private Double price;
 
     public ProductItem(Long productId, Integer quantity) {
         this.productId = productId;

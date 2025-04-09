@@ -1,6 +1,9 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.product;
 
 import lombok.*;
+import ua.edu.znu.wcrestapp.model.Image;
+
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -13,9 +16,9 @@ public class Product {
     @Setter(AccessLevel.NONE)
     private String permalink;
     @Setter(AccessLevel.NONE)
-    private String date_created;
+    private LocalDateTime date_created;
     @Setter(AccessLevel.NONE)
-    private String date_modified;
+    private LocalDateTime date_modified;
     private ProductType type;
     private ProductStatus productStatus;
     private String description;

@@ -1,5 +1,8 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.product;
 
+import lombok.Getter;
+
+@Getter
 public enum ProductType {
     SIMPLE("simple"),
     GROUPED("grouped"),
@@ -12,7 +15,4 @@ public enum ProductType {
         this.type = type;
     }
 
-    public String getType() {
-        return type;
-    }
 }

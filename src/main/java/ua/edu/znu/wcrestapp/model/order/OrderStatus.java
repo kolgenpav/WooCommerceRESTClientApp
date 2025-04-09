@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.order;
 
 public enum OrderStatus {
     PENDING("pending"),
@@ -10,13 +10,11 @@ public enum OrderStatus {
     FAILED("failed"),
     TRASH("trash");
 
+
     private final String status;
 
     OrderStatus(String status) {
         this.status = status;
     }
-
-    public String getStatus() {
-        return status;
-    }
 }
+

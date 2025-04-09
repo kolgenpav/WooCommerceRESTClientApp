@@ -1,9 +1,12 @@
 package ua.edu.znu.wcrestapp.api;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import okhttp3.Credentials;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -38,5 +41,11 @@ public class Config {
             Logger.getGlobal().severe(e.getMessage());
         }
         return Credentials.basic(credentialsProps.getProperty("consumer_key"), credentialsProps.getProperty("consumer_secret"));
+    }
+
+    public Gson getGson() {
+        return new GsonBuilder()
+                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                .create();
     }
 }

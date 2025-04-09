@@ -3,7 +3,7 @@ package ua.edu.znu.wcrestapp.api;
 import com.google.gson.Gson;
 import okhttp3.*;
 import ua.edu.znu.wcrestapp.model.Billing;
-import ua.edu.znu.wcrestapp.model.Customer;
+import ua.edu.znu.wcrestapp.model.customer.Customer;
 import ua.edu.znu.wcrestapp.model.Shipping;
 
 import java.io.IOException;

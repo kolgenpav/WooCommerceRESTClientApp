@@ -4,6 +4,9 @@ import com.google.gson.Gson;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 import ua.edu.znu.wcrestapp.model.*;
+import ua.edu.znu.wcrestapp.model.order.Order;
+import ua.edu.znu.wcrestapp.model.order.OrderStatus;
+import ua.edu.znu.wcrestapp.model.order.ProductItem;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -16,7 +19,7 @@ public class OrderApi {
      * @return the Order instance
      */
     @NotNull
-    public Order prepeareWcOrder(ProductItem[] products, OrderStatus orderStatus) {
+    public Order prepeareOrder(ProductItem[] products, OrderStatus orderStatus) {
         Shipping shipping = new Shipping("John", "Doe", "Company", "Address 1", "Address 2",
                 "City", "State", "Postcode", "Country");
         Billing billing = new Billing("John", "Doe", "Company", "Address 1", "Address 2",
@@ -27,7 +30,7 @@ public class OrderApi {
         order.setShipping(shipping);
         order.setPayment_method("cod");
         order.setPayment_method_title("Готівка при отриманні");
-        order.setStatus(orderStatus.getStatus());
+        order.setStatus(orderStatus);
         System.out.println(order.getStatus());
         return order;
     }

@@ -1,4 +1,4 @@
-package ua.edu.znu.wcrestapp.model;
+package ua.edu.znu.wcrestapp.model.product;
 
 import java.util.Arrays;
 
