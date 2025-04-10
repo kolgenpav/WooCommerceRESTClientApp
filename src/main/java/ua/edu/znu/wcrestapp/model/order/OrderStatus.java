@@ -1,5 +1,8 @@
 package ua.edu.znu.wcrestapp.model.order;
 
+import lombok.Getter;
+
+@Getter
 public enum OrderStatus {
     PENDING("pending"),
     PROCESSING("processing"),

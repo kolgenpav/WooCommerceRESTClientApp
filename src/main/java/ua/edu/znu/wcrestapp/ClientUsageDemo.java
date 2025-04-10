@@ -8,7 +8,6 @@ import ua.edu.znu.wcrestapp.api.OrderApi;
 import ua.edu.znu.wcrestapp.api.ProductApi;
 import ua.edu.znu.wcrestapp.model.customer.Customer;
 import ua.edu.znu.wcrestapp.model.order.Order;
-import ua.edu.znu.wcrestapp.model.order.OrderStatus;
 import ua.edu.znu.wcrestapp.model.order.ProductItem;
 import ua.edu.znu.wcrestapp.model.product.Product;
 
@@ -31,12 +30,11 @@ public class ClientUsageDemo {
 
             /*Create an order*/
             OrderApi orderApi = new OrderApi();
-            OrderStatus orderStatus = OrderStatus.PROCESSING;
             ProductItem[] products = new ProductItem[1];
             ProductItem productItem = new ProductItem(productId, 1);
             productItem.setSku("109-10821388");
             products[0] = productItem;
-            Order order = orderApi.prepeareOrder(products, orderStatus);
+            Order order = orderApi.prepeareOrder(products);
             System.out.println(gson.toJson(order));
             Order orderReturned = orderApi.createOrder(order, client, gson, config);
             System.out.println(orderReturned);
@@ -61,8 +59,8 @@ public class ClientUsageDemo {
             Customer customerReturned = customerApi.createCustomer(customer, client, gson, config);
             System.out.println(customerReturned);
 
-            /*Get a customer by Id*/
-            Customer customerGet = customerApi.getCustomer(3L, client, gson, config);
+            /*Get a customer by Id - SEE Id in the database!!!*/
+            Customer customerGet = customerApi.getCustomer(4L, client, gson, config);
             System.out.println(customerGet);
 
         } catch (Exception e) {
