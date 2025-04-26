@@ -19,10 +19,12 @@ public class OrderApi {
      */
     @NotNull
     public Order prepeareOrder(ProductItem[] products) {
-        Shipping shipping = new Shipping("John", "Doe", "Company", "Address 1", "Address 2",
-                "City", "State", "Postcode", "Country");
-        Billing billing = new Billing("John", "Doe", "Company", "Address 1", "Address 2",
-                "City", "State", "Postcode", "Country", "john@gail.com", "1234567890");
+        Shipping shipping = Shipping.builder().first_name("John").last_name("Doe").company("Company")
+                .address_1("Address 1").address_2("Address 2").city("City").state("State")
+                .postcode("Postcode").country("Country").build();
+        Billing billing = Billing.billingBuilder().firstName("John").lastName("Doe").company("Company")
+                .address1("Address 1").address2("Address 2").city("City").state("State")
+                .postcode("Postcode").country("Country").email("john@gail.com").phone("1234567890").build();
         Order order = new Order();
         order.setLine_items(products);
         order.setBilling(billing);
