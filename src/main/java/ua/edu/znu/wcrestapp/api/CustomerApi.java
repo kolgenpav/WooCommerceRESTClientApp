@@ -34,15 +34,15 @@ public class CustomerApi {
                 city, state, postcode, country);
         Billing billing = new Billing(firstName, lastName, company, address1, address2,
                 city, state, postcode, country, email, phone);
-        Customer customer = new Customer();
-        customer.setFirst_name(firstName);
-        customer.setLast_name(lastName);
-        customer.setEmail(email);
-        customer.setUsername(username);
-        customer.setPassword(password);
-        customer.setBilling(billing);
-        customer.setShipping(shipping);
-        return customer;
+        return Customer.customerBuilder()
+                .first_name(firstName)
+                .last_name(lastName)
+                .email(email)
+                .username(username)
+                .password(password)
+                .billing(billing)
+                .shipping(shipping)
+                .build();
     }
 
     /**
