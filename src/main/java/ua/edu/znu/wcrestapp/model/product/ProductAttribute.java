@@ -1,32 +1,16 @@
 package ua.edu.znu.wcrestapp.model.product;
 
-import java.util.Arrays;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Setter;
 
-public record ProductAttribute(String id, String name, String slug, String position, boolean visible, String variation,
-                               boolean has_terms, String[] options) {
-
-    @Override
-    public String toString() {
-        return """
-                Attribute{
-                    id='%s',
-                    name='%s',
-                    slug='%s',
-                    position='%s',
-                    visible='%s',
-                    variation='%s',
-                    has_terms='%s',
-                    options=%s
-                }
-                """.formatted(
-                id,
-                name,
-                slug,
-                position,
-                visible,
-                variation,
-                has_terms,
-                Arrays.toString(options)
-        );
-    }
+@Data
+public class ProductAttribute {
+    @Setter(AccessLevel.NONE)
+    private Long id;
+    private String name;
+    private String slug;
+    private String type;
+    private AttributesOrder order_by;
+    private boolean has_archives;
 }

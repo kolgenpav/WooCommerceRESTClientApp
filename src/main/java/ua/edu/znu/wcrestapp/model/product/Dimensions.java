@@ -1,19 +1,14 @@
 package ua.edu.znu.wcrestapp.model.product;
 
-public record Dimensions(Double length, Double width, Double height) {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    @Override
-    public String toString() {
-        return """
-                Dimensions{
-                    length='%s',
-                    width='%s',
-                    height='%s'
-                }
-                """.formatted(
-                length,
-                width,
-                height
-        );
-    }
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Dimensions {
+    private Double length;
+    private Double width;
+    private Double height;
 }
