@@ -31,7 +31,7 @@ public class ClientUsageDemo {
             /*Create an order*/
             OrderApi orderApi = new OrderApi();
             ProductItem[] products = new ProductItem[1];
-            ProductItem productItem = new ProductItem(productId, 1);
+            ProductItem productItem = new ProductItem(product, 1);
             productItem.setSku("109-10821388");
             products[0] = productItem;
             Order order = orderApi.prepeareOrder(products);
@@ -59,7 +59,7 @@ public class ClientUsageDemo {
             Customer customerReturned = customerApi.createCustomer(customer, client, gson, config);
             System.out.println(customerReturned);
 
-            /*Get a customer by Id - SEE Id in the database!!!*/
+            /*Get a customer by id - SEE id in the database!!!*/
             Customer customerGet = customerApi.getCustomer(4L, client, gson, config);
             System.out.println(customerGet);
 

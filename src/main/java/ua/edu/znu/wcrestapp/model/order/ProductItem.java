@@ -3,6 +3,7 @@ package ua.edu.znu.wcrestapp.model.order;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ua.edu.znu.wcrestapp.model.product.Product;
 
 @Data
 @NoArgsConstructor
@@ -17,8 +18,12 @@ public class ProductItem {
     private String sku;
     private Double price;
 
-    public ProductItem(Long productId, Integer quantity) {
-        this.productId = productId;
+    public ProductItem(Product product, Integer quantity) {
+        this.productId = product.getId();
+        this.name = product.getName();
+        this.sku = product.getSku();
         this.quantity = quantity;
+        this.price = product.getSale_price() != null ? product.getSale_price() : product.getRegular_price();
+        this.total = price * quantity;
     }
 }
