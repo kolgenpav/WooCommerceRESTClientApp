@@ -25,13 +25,13 @@ public class OrderApi {
         Billing billing = Billing.billingBuilder().firstName("John").lastName("Doe").company("Company")
                 .address1("Address 1").address2("Address 2").city("City").state("State")
                 .postcode("Postcode").country("Country").email("john@gail.com").phone("1234567890").build();
-        Order order = new Order();
-        order.setLine_items(products);
-        order.setBilling(billing);
-        order.setShipping(shipping);
-        order.setPayment_method("cod");
-        order.setPayment_method_title("Готівка при отриманні");
-        return order;
+        return Order.orderBuilder()
+                .line_items(products)
+                .billing(billing)
+                .shipping(shipping)
+                .payment_method("cod")
+                .payment_method_title("Готівка при отриманні")
+                .build();
     }
 
     /**
