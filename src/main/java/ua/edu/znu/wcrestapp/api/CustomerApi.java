@@ -29,7 +29,9 @@ public class CustomerApi {
      * @param phone     phone number of the customer
      * @return the customer object
      */
-    public Customer prepareCustomer(String firstName, String lastName, String email, String username, String password, String company, String address1, String address2, String city, String state, String postcode, String country, String phone) {
+    public Customer prepareCustomer(String firstName, String lastName, String email, String username,
+                                    String password, String company, String address1, String address2,
+                                    String city, String state, String postcode, String country, String phone) {
         Shipping shipping = new Shipping(firstName, lastName, company, address1, address2,
                 city, state, postcode, country);
         Billing billing = new Billing(firstName, lastName, company, address1, address2,

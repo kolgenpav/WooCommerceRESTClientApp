@@ -28,6 +28,7 @@ public class ClientUsageDemo {
             Product product = productApi.getProduct(productId, client, gson, config);
             System.out.println(product);
 
+            System.out.println("-----------------------------------------------------------------");
             /*Create an order*/
             OrderApi orderApi = new OrderApi();
             ProductItem[] products = new ProductItem[1];
@@ -59,8 +60,9 @@ public class ClientUsageDemo {
             Customer customerReturned = customerApi.createCustomer(customer, client, gson, config);
             System.out.println(customerReturned);
 
+            System.out.println("-----------------------------------------------------------------");
             /*Get a customer by id - SEE id in the database!!!*/
-            Customer customerGet = customerApi.getCustomer(4L, client, gson, config);
+            Customer customerGet = customerApi.getCustomer(5L, client, gson, config);
             System.out.println(customerGet);
 
         } catch (Exception e) {
