@@ -14,7 +14,7 @@ public class ProductItem {
     private Long productId;
     private Integer quantity;
     private String subtotal;
-    private Double total;
+    private String total;
     private String sku;
     private Double price;
 
@@ -24,6 +24,6 @@ public class ProductItem {
         this.sku = product.getSku();
         this.quantity = quantity;
         this.price = product.getSale_price() != null ? product.getSale_price() : product.getRegular_price();
-        this.total = price * quantity;
+        this.total = String.valueOf(price * quantity);
     }
 }
